@@ -10,7 +10,7 @@ fetch('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=C
 	.then(response => response.json())
 	.then((response) =>{
         let covid = response.data;
-        covid.forEach((element) => {
+        Array.from(covid).forEach((element) => {
             deaths.innerHTML = element.deaths
             confirmed.innerHTML = element.confirmed
 
