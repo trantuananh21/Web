@@ -29,7 +29,7 @@ var map = arr3.map(item =>{
     var newArr = item + 5
     return newArr
 })
-console.log('Bai 2:' + ' ' + map);
+console.log(map);
 
 // Bai 3
 let m = [1,2,4,5,6,7]; 
@@ -40,13 +40,13 @@ for( var i = 0; i < m.length; i++){
         m.splice(i, 1); 
     }
 }
-console.log('Bai 3:'+' '+ m);
+console.log(m);
 for( var i = 0; i < n.length; i++){ 
     if ( n[i] === 1,8,10,96,7) { 
         n.splice(i, 1); 
     }
 }
-console.log('Bai 3:'+' '+ n);
+console.log(n);
 
 // Bai 4
 console.log('Bai 4');
