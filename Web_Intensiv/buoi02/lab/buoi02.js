@@ -21,7 +21,7 @@ var arr2 = [1,6,8,9,0];
 var arr = arr1.filter(item => {
     return arr2.indexOf(item) > -1;
 })
-console.log('Bai 1:' + ' ' + arr);
+console.log(Object.keys(arr));
 
 // Bai 2
 var arr3 = [1,5,4,6,7];
