@@ -49,3 +49,26 @@ console.log(banNam);
 // 1000 giao vien
 // 1000 canh sat
 // them gioi tinh
+
+
+// Lam thu
+class players{
+    constructor(name,age, national){
+        this.name = name,
+        this.age = age,
+        this.national = national;
+    }
+    nationality(){
+        return `${this.name} comes from ${this.national}`;
+    }
+}
+
+var messi = new players("Messi", 37,"Argentina");
+var ronaldo = new players('Ronaldo', 38, "Portugal");
+var modric = new players('Luka Modric', 35, "Croatia");
+var neymar = new players('Neymar Jr.', 35, "Brazil");
+
+console.log(messi.nationality());
+console.log(ronaldo.nationality());
+console.log(modric.nationality());
+console.log(neymar.nationality());
