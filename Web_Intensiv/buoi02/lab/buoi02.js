@@ -19,15 +19,14 @@ var arr1 = [1,2,4,5,6];
 var arr2 = [1,6,8,9,0];
 
 var arr = arr1.filter(item => {
-    return arr2.indexOf(item) > -1;
+    return arr2.includes(item);
 })
-console.log(Object.keys(arr));
+console.log(arr);
 
 // Bai 2
 var arr3 = [1,5,4,6,7];
 var map = arr3.map(item =>{
-    var newArr = item + 5
-    return newArr
+    return item + 5
 })
 console.log(map);
 
@@ -35,18 +34,17 @@ console.log(map);
 let m = [1,2,4,5,6,7]; 
 let n = [3,5,675,8,96];
 
-for( var i = 0; i < m.length; i++){ 
-    if ( m[i] === 1,8,10,96,7) { 
-        m.splice(i, 1); 
-    }
-}
-console.log(m);
-for( var i = 0; i < n.length; i++){ 
-    if ( n[i] === 1,8,10,96,7) { 
-        n.splice(i, 1); 
-    }
-}
-console.log(n);
+m.filter((item)=>{
+    del = [1,8,10,96,7]
+        return !del.includes(item)
+});
+
+n.filter((item)=>{
+    del = [1,8,10,96,7]
+        return !del.includes(item)
+});
+result = Object.assign(m,n)
+console.log(result);
 
 // Bai 4
 console.log('Bai 4');
