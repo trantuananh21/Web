@@ -51,7 +51,7 @@ console.log(banNam);
 // them gioi tinh
 
 
-// Lam thu
+// Làm thử
 class players{
     constructor(name,age, national){
         this.name = name,
