@@ -13,7 +13,7 @@ class Rabit extends Animal{
 }
 
 let rabit = new Rabit('White Rabit');
-// alert(rabit.name);
+alert(rabit.name);
 
 // Bài 2
 class Clock {
