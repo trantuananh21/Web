@@ -87,28 +87,40 @@ class PhanSo{
     }
 
     static cong(a,b){
-        const c = a.tu + b.mau;
-        const d = b.mau;
+        const c = a.tu * b.mau + b.tu * a.mau;
+        const d = a.mau * b.mau;
 
-        return Math.hypot(c, d);
+        return [
+            Math.hypot(c),
+            Math.hypot(d)
+        ] 
     }
     static tru(a,b){
-        const e = a.tu - b.tu;
-        const f = b.mau;
+        const e = a.tu * b.mau - b.tu * a.mau;
+        const f = a.mau * b.mau;
 
-        return Math.hypot(e,f);
+        return [
+            Math.hypot(e),
+            Math.hypot(f)
+        ] 
     }
     static nhan(a,b){
-        const g = a.tu;
-        const h = b.mau;
+        const g = a.tu * b.tu;
+        const h = a.mau * b.mau;
 
-        return Math.hypot(g,h);
+        return [
+            Math.hypot(g),
+            Math.hypot(h)
+        ] 
     }
     static chia(a,b){
-        const i = a.mau;
-        const j = b.tu;
+        const i = a.tu * b.mau;
+        const j = a.mau * b.tu;
 
-        return Math.hypot(i,j);
+        return [
+            Math.hypot(i),
+            Math.hypot(j)
+        ] 
     }
 };
 
