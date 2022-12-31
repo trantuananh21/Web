@@ -135,3 +135,29 @@ console.log(PhanSo.cong(phanSo3,phanSo1));
 console.log(PhanSo.tru(phanSo3,phanSo1));
 console.log(PhanSo.nhan(phanSo3,phanSo1));
 console.log(PhanSo.chia(phanSo3,phanSo1));
+
+export default PhanSo;
+
+// Bai thay chua
+class PhanSo2 {
+    constructor(tuso,mauso){
+        this.tuso = tuso,
+        this.mauso = mauso;
+    }
+
+    print_fraction(){
+        let text = 'Phan so la:' + this.tuso + '/' + this.mauso
+        console.log(text);
+    }
+
+    plus(phanSo5){
+        let mausochung = this.mauso * phanSo5.mauso;
+        let tusochung = this.mauso * phanSo5.tuso + this.tu * phanSo5.mauso
+        console.log(tusochung + '/' + mausochung);
+    }
+}
+
+var phanSo4 = new PhanSo2(1,2);
+var phanSo5 = new PhanSo2(1,4)
+
+phanSo4.plus(phanSo5);
