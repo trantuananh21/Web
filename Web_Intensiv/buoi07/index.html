@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="email">Email:</label>
+    <input type="email" id="email">
+    <br>
+    <label for="pass">Password:</label>
+    <input type="password" id="pass">
+
+    <button id="submit">Sign Up</button>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+        import { collection, getDocs, getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"; 
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDantJX62rGkccQ_GCmbxYUlYGM7GzHhpk",
+          authDomain: "jsi-15.firebaseapp.com",
+          projectId: "jsi-15",
+          storageBucket: "jsi-15.appspot.com",
+          messagingSenderId: "524363690661",
+          appId: "1:524363690661:web:56e8f201f275e85188934c",
+          measurementId: "G-6DMZTPQPHD"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+
+        // Get Firebase
+
+        const db = await getFirestore(app)
+
+        const querySnapshot = await getDocs(collection(db, "test-table"));
+        querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+});
+
+try{
+    const data_to_input = {
+        name: "Phap",
+        age: 61,
+        class: 'ISJ 51'
+    }
+
+    const docRef = await addDoc(collection(db,"test-table"), data_to_input);
+
+    console.log("Document written with ID:", docRef.id);
+
+}  catch(e){
+    console.error('Error adding document:', e);
+}
+      </script>
+
+<!-- Dang nhap va Dang ki -->
+    <script type="module">
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+const auth = getAuth();
+function submit(){
+    var email = document.getElementById('email')
+    var pass = document.getElementById('pass')
+
+    signInWithEmailAndPassword(auth, 'tuan.anh123@gmail.com', '1234545')
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+    console.log("Dang nhap thanh cong");
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log("Dang nhap khong thanh cong");
+  });
+}
+
+document.getElementById('submit').addEventListener('click', submit)
+
+
+// Dang ky
+function signup(email_input, pass_input){
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email_input, pass_input)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
+signup('alo@gmail.com', '1232131')
+      </script>
+
+</body>
+</html>
