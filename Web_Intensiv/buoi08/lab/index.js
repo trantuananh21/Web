@@ -17,7 +17,6 @@ function timer() {
         ms, sec, min = 0;
     }
 
-    //Doing some string interpolation
     let milli = ms < 10 ? `0`+ ms : ms;
     let seconds = sec < 10 ? `0`+ sec : sec;
     let minute = min < 10 ? `0` + min : min;
@@ -25,15 +24,12 @@ function timer() {
     let timer= `${minute}:${seconds}:${milli}`;
     output.innerHTML =timer;
 };
-//Start timer
 function start(){
  time = setInterval(timer,10);
 }
-//stop timer
 function stop(){
     clearInterval(time)
 }
-//reset timer
 function reset(){
     ms = 0;
     sec = 0;
